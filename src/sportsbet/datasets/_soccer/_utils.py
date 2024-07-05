@@ -66,7 +66,6 @@ OUTPUTS = [
         < OVER_UNDER[3],
     ),
 ]
-CONNECTIONS_LIMIT = 20
 
 
 async def _read_url_content_async(client: aiohttp.ClientSession, url: str) -> str:
@@ -80,7 +79,6 @@ async def _read_urls_content_async(urls: list[str]) -> list[str]:
     """Read asynchronously the URLs content."""
     async with aiohttp.ClientSession(
         raise_for_status=True,
-        connector=aiohttp.TCPConnector(limit=CONNECTIONS_LIMIT),
     ) as client:
         futures = [_read_url_content_async(client, url) for url in urls]
         return await asyncio.gather(*futures)
