@@ -51,6 +51,9 @@ Funding = "https://github.com/sponsors/georgedouzas"
 [project.scripts]
 sportsbet = "sportsbet.cli:main"
 
+[project.gui-scripts]
+sportsbet-gui = "sportsbet.gui:main"
+
 [tool.pdm]
 version = {source = "scm"}
 build = {package-dir = "src", editable-backend = "editables"}
