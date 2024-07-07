@@ -7,7 +7,7 @@ from pathlib import Path
 import mkdocs_gen_files
 
 nav = mkdocs_gen_files.nav.Nav()
-exclude_modules: list[str] = ['sportsbet.cli']
+exclude_modules: list[str] = ['sportsbet.cli', 'sportsbet.gui']
 
 paths = sorted(Path('src').rglob('*.py'))
 paths = [
